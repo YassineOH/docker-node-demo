@@ -18,6 +18,15 @@ import {
 import postRoute from "./router/Post.js";
 import userRouter from "./router/User.js";
 import { protect } from "./middleware/authMiddleware.js"
+console.log({
+    MONGO_IP,
+    MONGO_PASSWORD,
+    MONGO_USERNAME,
+    MONGO_PORT,
+    REDIS_URL,
+    REDIS_PORT,
+    SECRET_SESSION,
+})
 
 const app = express();
 app.use(cors())
