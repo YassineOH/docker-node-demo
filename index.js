@@ -56,6 +56,7 @@ app.use("/api/v1/users", userRouter);
 const startApp = async () => {
     try {
         const url = `mongodb://${MONGO_USERNAME}:${MONGO_PASSWORD}@${MONGO_IP}:${MONGO_PORT}/?authSource=admin`;
+        console.log(url)
         mongoose.set("strictQuery", false);
         await mongoose.connect(url);
         const port = process.env.PORT || 3000;
