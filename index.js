@@ -18,15 +18,6 @@ import {
 import postRoute from "./router/Post.js";
 import userRouter from "./router/User.js";
 import { protect } from "./middleware/authMiddleware.js"
-console.log({
-    MONGO_IP,
-    MONGO_PASSWORD,
-    MONGO_USERNAME,
-    MONGO_PORT,
-    REDIS_URL,
-    REDIS_PORT,
-    SECRET_SESSION,
-})
 
 const app = express();
 app.use(cors())
@@ -65,7 +56,6 @@ app.use("/api/v1/users", userRouter);
 const startApp = async () => {
     try {
         const url = `mongodb://${MONGO_USERNAME}:${MONGO_PASSWORD}@${MONGO_IP}:${MONGO_PORT}/?authSource=admin`;
-        console.log(url)
         mongoose.set("strictQuery", false);
         await mongoose.connect(url);
         const port = process.env.PORT || 3000;
