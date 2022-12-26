@@ -67,4 +67,5 @@ const startApp = async () => {
         console.error(error);
     }
 };
+console.log({ MONGO_USERNAME, MONGO_PASSWORD })
 startApp();
